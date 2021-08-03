@@ -3,7 +3,6 @@ function compareTrue(a, b) {
   let status = false;
   if (a === true && b === true) {
     status = true;
-  } else {
   }
   return status;
 }
@@ -22,10 +21,10 @@ function splitSentence(frase) {
 
 // Desafio 4
 function concatName(array) {
-  let string = "";
+  let string = '';
   let name1 = array[0];
   let name2 = array[array.length - 1];
-  string = name2 + ", " + name1;
+  string = name2 + ', ' + name1;
   return string;
 }
 
@@ -40,7 +39,7 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(array) {
-  let maiorNum = 0;
+  let maiorNum = array[0];
   let count = 0;
   for (let index = 0; index < array.length; index += 1){
     if (maiorNum < array[index]) {
