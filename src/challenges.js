@@ -22,7 +22,7 @@ function splitSentence(frase) {
 // Desafio 4
 function concatName(array) {
   let string = '';
-  let virgula = ', '
+  let virgula = ', ';
   let name1 = array[0];
   let name2 = array[array.length - 1];
   string = name2 + virgula + name1;
@@ -67,7 +67,7 @@ function catAndMouse(mouse, cat1, cat2) {
     result = 'cat1';
   }
   if (movCat1 === movCat2) {
-    result = 'os gatos trombam e o rato foge'
+    result = 'os gatos trombam e o rato foge';
   }
   return result;
 }
@@ -80,16 +80,16 @@ function fizzBuzz(array) {
   let div3e5 = 'fizzBuzz';
   let divNa = 'bug!';
   for (let index = 0; index < array.length; index += 1) {
-    if (array[index] % 3 === 0 && array[index] % 5 != 0) {
+    if (array[index] % 3 === 0 && array[index] % 5 !== 0) {
       arrayB.push(div3);
     }
-    if (array[index] % 5 === 0 && array[index] % 3 != 0) {
+    if (array[index] % 5 === 0 && array[index] % 3 !== 0) {
       arrayB.push(div5);
     }
     if (array[index] % 3 === 0 && array[index] % 5 === 0) {
       arrayB.push(div3e5);
     }
-    if (array[index] % 3 != 0 && array[index] % 5 != 0) {
+    if (array[index] % 3 !== 0 && array[index] % 5 !== 0) {
       arrayB.push(divNa);
     }
   }
