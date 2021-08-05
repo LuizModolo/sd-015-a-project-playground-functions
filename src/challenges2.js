@@ -12,18 +12,51 @@ function techList(array, nome) {
 }
 
 // Desafio 11
-function generatePhoneNumber(array) {
-//   let myNum;
-//   if (array.length === 11) {
-//     for (let i = 0; i < array.length; i += 1) {
-//       myNum = '(' + array[0] + array[1] + ')' + array[2] + array[3] + array[4] + array[5] + array[6] + '-' + array[7] + array[8] + array[9] + array[10];
-//     }
-//   } else {
-//     myNum = "Array com tamanho incorreto."
-//   }
+function ehTamanho11(array) {
+  if (array.length !== 11) {
+    return false;
+  }
+  return true;
 }
 
-// console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
+function testNumb(array) {
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] < 0 || array[index] > 9) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function testRepeat(array) {
+  let repeat = 0;
+  for (let i = 0; i < array.length; i += 1) {
+    for (let i2 = 0; i2 < array.length; i2 += 1) {
+      if (array[i] === array[i2]) {
+        repeat += 1;
+      }
+    }
+    if (repeat > 2) {
+      return false;
+    }
+    repeat = 0;
+  }
+  return true;
+}
+
+function generatePhoneNumber(array) {
+  let resultado;
+  if (!ehTamanho11(array)) {
+    resultado = 'Array com tamanho incorreto.';
+  } else if (!testNumb(array)) {
+    resultado = 'não é possível gerar um número de telefone com esses valores';
+  } else if (!testRepeat(array)) {
+    resultado = 'não é possível gerar um número de telefone com esses valores';
+  } else {
+    resultado = '(' + array[0] + array[1] + ') ' + array[2] + array[3] + array[4] + array[5] + array[6] + '-' + array[7] + array[8] + array[9] + array[10];
+  }
+  return resultado;
+}
 
 // Desafio 12
 function triangleCheck(num1, num2, num3) {
