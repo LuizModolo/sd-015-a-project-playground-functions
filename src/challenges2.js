@@ -59,26 +59,30 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
-function testeNumeros(num1, num2, num3) {
+function triangleCheck(num1, num2, num3) {
   let num1Ab = Math.abs(num1);
   let num2Ab = Math.abs(num2);
   let num3Ab = Math.abs(num3);
-  if (num1Ab >= num2Ab + num3Ab || num2Ab >= num1Ab + num3Ab || num3Ab >= num1Ab + num2Ab) {
-    return false;
-  }
-  return true;
-}
-
-function triangleCheck(num1, num2, num3) {
-  if (!testeNumeros(num1, num2, num3)) {
-    return false;
-  }
-  return true;
+  return !(num1Ab >= num2Ab + num3Ab || num2Ab >= num1Ab + num3Ab || num3Ab >= num1Ab + num2Ab);
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  // let sum = 0;
+  let result;
+  let numero = 0;
+  let umCopo = ' copo de água';
+  let maisCopo = ' copos de água';
+  let matchArray = string.match(/[1-9]/gi);
+  for (let i = 0; i < matchArray.length; i += 1) {
+    numero += parseInt(matchArray[i], 10);
+  }
+  if (numero === 1) {
+    result = numero + umCopo;
+  } else {
+    result = numero + maisCopo;
+  }
+  return result;
 }
 
 module.exports = {
