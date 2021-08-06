@@ -59,18 +59,21 @@ function generatePhoneNumber(array) {
 }
 
 // Desafio 12
+function testeNumeros(num1, num2, num3) {
+  let num1Ab = Math.abs(num1);
+  let num2Ab = Math.abs(num2);
+  let num3Ab = Math.abs(num3);
+  if (num1Ab >= num2Ab + num3Ab || num2Ab >= num1Ab + num3Ab || num3Ab >= num1Ab + num2Ab) {
+    return false;
+  }
+  return true;
+}
+
 function triangleCheck(num1, num2, num3) {
-//   let array = [];
-//   array.push(num1, num2, num3)
-//   function numeros(array) {
-//     let menorNum = array[0];
-//     for (let index = 0; index < array.length; index += 1) {
-//       if (menorNum > array[index]) {
-//         menorNum = array[index];
-//       }
-//     return menorNum;
-//   }
-//   if ()
+  if (!testeNumeros(num1, num2, num3)) {
+    return false;
+  }
+  return true;
 }
 
 // Desafio 13
